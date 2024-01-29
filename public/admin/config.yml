@@ -2,20 +2,14 @@ backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
 
-media_folder: "public/uploads" # Where media files will be stored
-public_folder: "/uploads" # Where the media files can be accesed from the server
+media_folder: "public/upload" # Where media files will be stored
+public_folder: "/upload" # Where the media files can be accesed from the server
 publish_mode: editorial_workflow # For Drafts
 
 collections:
-  - name: "home" # Used in routes, e.g., /admin/collections/blog
-    label: "Home" # Used in the UI
-    file: "site/home.yml"
-    fields: # The fields for each document, usually in front matter
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
-  - name: "meta"
-    label: "Meta"
-    folder: "content/home"
+  - name: "config"
+    label: "Config"
+    delete: false
     editor:
       preview: false
     files:
@@ -48,3 +42,21 @@ collections:
           - label: "LinkedIn"
             name: "linkedin"
             widget: "string"
+  - label: "Pages"
+    name: "pages"
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "site/home.yml"
+        fields:
+          - {label: Marquee, name: marquee, widget: string}
+          - label: "Desktop images"
+            name: "desktopImages"
+            widget: "list"
+            summary: '{{fields.image}}'
+            field: {label: Image, name: image, widget: image, required: true}
+          - label: "Mobile images"
+            name: "mobileImages"
+            widget: "list"
+            summary: '{{fields.image}}'
+            field: {label: Image, name: image, widget: image, required: true}
