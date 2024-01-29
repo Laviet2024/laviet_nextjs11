@@ -49,14 +49,35 @@ collections:
         name: "home"
         file: "site/home.yml"
         fields:
-          - {label: Marquee, name: marquee, widget: string}
           - label: "Desktop images"
             name: "desktopImages"
             widget: "list"
             summary: '{{fields.image}}'
             field: {label: Image, name: image, widget: image, required: true}
-          - label: "Mobile images"
-            name: "mobileImages"
-            widget: "list"
-            summary: '{{fields.image}}'
-            field: {label: Image, name: image, widget: image, required: true}
+          - label: "About"
+            name: "about"
+            widget: "markdown"
+          - label: "Address"
+            name: "address"
+            widget: "markdown"
+          - label: "Hours"
+            name: "hours"
+            widget: "markdown"
+          - label: "Contact"
+            name: "contact"
+            widget: "markdown"
+          - label: "Menu Philosophy"
+            name: "menu_philosophy"
+            widget: "markdown"
+          - label: "Menu"
+            name: "menu"
+            widget: "file"
+            media_library:
+              config:
+                multiple: false
+          - lable: "Order online link"
+            name: "order_online_link"
+            widget: "string"
+          - lable: "Book online link"
+            name: "book_online_link"
+            widget: "string"
