@@ -9,9 +9,42 @@ publish_mode: editorial_workflow # For Drafts
 collections:
   - name: "home" # Used in routes, e.g., /admin/collections/blog
     label: "Home" # Used in the UI
-    folder: "content/home" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    file: "site/home.yml"
     fields: # The fields for each document, usually in front matter
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
+  - name: "meta"
+    label: "Meta"
+    folder: "content/home"
+    editor:
+      preview: false
+    files:
+      - name: "general"
+        label: "Site Config"
+        file: "config.json"
+        description: "General site settings"
+        fields:
+          - label: "URL"
+            name: "base_url"
+            widget: "string"
+            hint: "Do not enter the trailing slash of the URL"
+          - label: "Site title"
+            name: "site_title"
+            widget: "string"
+          - label: "Site description"
+            name: "site_description"
+            widget: "string"
+          - label: "Site keywords"
+            name: "site_keywords"
+            widget: "list"
+            summary: "{{fields.keyword.keyword}}"
+            field:
+              label: Keyword
+              name: keyword
+              widget: "string"
+          - label: "Instagram"
+            name: "instagram"
+            widget: "string"
+          - label: "LinkedIn"
+            name: "linkedin"
+            widget: "string"
