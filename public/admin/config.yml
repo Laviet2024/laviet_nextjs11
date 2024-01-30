@@ -47,7 +47,7 @@ collections:
     files:
       - label: "Home Page"
         name: "home"
-        file: "site/home.yml"
+        file: "site/home.mdx"
         fields:
           - label: "Desktop images"
             name: "desktopImages"
