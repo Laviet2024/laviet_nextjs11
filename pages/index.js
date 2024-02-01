@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import yaml from 'js-yaml';
 
 import pageContent from "../site/home.yml";
 
@@ -33,6 +32,8 @@ export default function Home() {
         <div>{order_online_link}</div>
         <div>{book_online_link}</div>
 
+        
+
 
       </main>
 
@@ -42,3 +43,8 @@ export default function Home() {
     </div>
   )
 }
+
+
+// Get images working
+// add tailwind
+// get click/slider working. 
