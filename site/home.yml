@@ -1,12 +1,37 @@
-about: about about about about about about about about about about
-  about about
-address: address address address address address address address address
-  address
-hours: hours hours hours hours hours hours hours hours hours hours
-contact: contact contact contact contact contact contact contact contact
-  contact contact contact
-menu_philosophy: philosophy philosophy philosophy philosophy philosophy
-  philosophy philosophy philosophy philosophy philosophy philosophy
+desktopImages:
+  - /upload/6-1.png
+  - /upload/6-2.png
+  - /upload/6-3.png
+about: >-
+  Là Viet is a calm backdrop to the vibrant flavours and ingredients of
+  Vietnamese cuisine, with authentic Vietnamese hospitality presented in a
+  contemporary way. We strive to return cooking to its true essence, fire at the
+  heart, grounded in quality ingredients, with every detail considered, and
+  every herb in its place.
+
+
+  Là Viet celebrates a new generation of Vietnamese fare.
+address: |-
+  Chatswood Chase\
+  Shop 00 Ground Floor\
+  345 Victoria Ave\
+  Chatswood NSW 2067
+hours: |-
+  Mon-Wed: 10am-6pm\
+  Thur: 10am-8pm\
+  Fri-Sun: 10am-6pm
+contact: |-
+  02 9000 0000\
+  info@laviet.sydney\
+  @laviet.sydney
+menu_philosophy: >-
+  Our menu honours simple, fresh ingredients and balanced flavours that embody
+  the heart of Vietnamese cuisine. Each dish is carefully crafted to provide a
+  sense of comfort while also engaging all of the senses.\
+
+  \
+
+  View sample menu
 menu: /upload/2087851v1.pdf
 order_online_link: https://google.com
 book_online_link: https://google.com
