@@ -19,3 +19,9 @@ a {
 * {
   box-sizing: border-box;
 }
+
+
+#__next, body, html {
+  height: 100%;
+}
+
