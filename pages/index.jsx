@@ -1,14 +1,7 @@
 import Head from 'next/head'
-import Image from 'next/image'
-
 import styles from '../styles/Home.module.css'
 // import { Navigation } from 'swiper'
-import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import { SwiperNavButton } from '../components/SwiperNavButton';
-import { EffectFade } from 'swiper/modules';
-
-
 import pageContent from "../site/home.yml";
 
 

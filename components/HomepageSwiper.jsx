@@ -1,4 +1,14 @@
-<Swiper
+import React from 'react';
+import { useSwiper, Swiper, SwiperSlide } from 'swiper/react';
+import Image from 'next/image'
+import { EffectFade } from 'swiper/modules';
+
+export const HomepageSwiper = () => {
+  const swiper = useSwiper();
+
+  return (
+    <div>
+      <Swiper
         spaceBetween={50}
         slidesPerView={1}
         allowTouchMove={false}
@@ -25,3 +35,6 @@
        <SwiperNavButton />
         {/* <button class="absolute top-[0px] left-[0px] z-[33] h-[100vh] w-[100vw]"></button> */}
       </Swiper>
+    </div>
+  );
+};
