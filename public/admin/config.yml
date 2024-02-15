@@ -54,6 +54,11 @@ collections:
             widget: "list"
             summary: '{{fields.image}}'
             field: {label: Image, name: image, widget: image, required: true}
+          - label: "Mobile images"
+            name: "mobileImages"
+            widget: "list"
+            summary: '{{fields.image}}'
+            field: {label: Image, name: image, widget: image, required: true}
           - label: "About"
             name: "about"
             widget: "markdown"
