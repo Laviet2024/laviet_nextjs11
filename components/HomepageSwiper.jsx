@@ -2,6 +2,9 @@ import React from 'react';
 import { useSwiper, Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/image'
 import { EffectFade } from 'swiper/modules';
+import { SwiperNavButton } from './SwiperNavButton';
+
+
 
 export const HomepageSwiper = () => {
   const swiper = useSwiper();
