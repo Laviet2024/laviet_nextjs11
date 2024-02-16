@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
 import 'swiper/css'; // Assuming you are using Swiper
 import pageContent from "../site/home.yml";
 import { HomepageSwiper } from '../components/HomepageSwiper';
@@ -9,11 +8,12 @@ import { AboutComponent } from '../components/AboutComponent';
 import { MenuComponent } from '../components/MenuComponent';
 import { ContactComponent } from '../components/ContactComponent';
 import { Footer } from '../components/Footer';
+import FadingComponent from '../components/FadingComponent';
+import splashLogo from '../public/upload/splash-logo.png'
 
 export default function Home() {
   // destructure.
   const { about, address, desktopImages, mobileImages, hours, contact, menu_philosophy, menu, order_online_link, book_online_link } = pageContent;
-  console.log(desktopImages);
 
   // State to hold the viewport height
   const [viewportHeight, setViewportHeight] = useState(0);
@@ -38,15 +38,36 @@ export default function Home() {
 
   // Effect to update the body element style whenever viewport height changes
   useEffect(() => {
-    document.body.style.setProperty('--vh', `${viewportHeight }px`);
+    document.body.style.setProperty('--vh', `${viewportHeight}px`);
   }, [viewportHeight]); // Trigger effect when viewport height changes
 
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
 
-  console.log(' is about open', isAboutOpen)
+  const toggleAbout = () => {
+    setIsAboutOpen(!isAboutOpen);
+    if (isMenuOpen) setIsMenuOpen(false);
+    if (isContactOpen) setIsContactOpen(false);
+  };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+    if (isAboutOpen) setIsAboutOpen(false);
+    if (isContactOpen) setIsContactOpen(false);
+  };
+
+  const toggleContact = () => {
+    setIsContactOpen(!isContactOpen);
+  };
+
+  // Automatically close about and menu when contact is opened
+  useEffect(() => {
+    if (isContactOpen) {
+      setIsAboutOpen(false);
+      setIsMenuOpen(false);
+    }
+  }, [isContactOpen]);
 
   return (
     <div className="flex flex-col bg-green text-white">
@@ -57,14 +78,14 @@ export default function Home() {
       <div className="flex h-[var(--vh)] flex-col bg-green text-white">
         <Navigation 
           isAboutOpen={isAboutOpen} 
-          setIsAboutOpen={setIsAboutOpen} 
+          setIsAboutOpen={toggleAbout} 
           isMenuOpen={isMenuOpen} 
-          setIsMenuOpen={setIsMenuOpen} 
+          setIsMenuOpen={toggleMenu} 
+          isContactOpen={isContactOpen} 
+          setIsContactOpen={toggleContact} 
         />
-        <div class="relative z-[3]"> 
-          <HomepageSwiper desktopImages={desktopImages} mobileImages={mobileImages}/>
-        </div>
-      </div>
+        <HomepageSwiper desktopImages={desktopImages} mobileImages={mobileImages}/>
+        <FadingComponent image={splashLogo} />
         <AboutComponent isAboutOpen={isAboutOpen}/>
         <MenuComponent isMenuOpen={isMenuOpen}/>
         <ContactComponent isContactOpen={isContactOpen} />
@@ -72,6 +93,7 @@ export default function Home() {
           isContactOpen={isContactOpen} 
           setIsContactOpen={setIsContactOpen} 
         />
+      </div>
     </div>
   );
 }

@@ -21,45 +21,49 @@ export const HomepageSwiper = ({ desktopImages, mobileImages }) => {
   }, []);
 
   return (
-    <Swiper
-      spaceBetween={50}
-      slidesPerView={1}
-      allowTouchMove={false}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
-      loop={true}
-      effect={'fade'}
-      modules={[EffectFade]}
-
-    >
-      {isMobile
-        ? 
-        mobileImages.map((image, index) => (
-          <SwiperSlide key={index} className="!min-w-screen !relative !h-[0px] !w-screen pt-[var(--vh)]"> 
-            <Image
-              src={image}
-              alt={`Slide ${index}`}
-              width={1242}  // Set the actual width of the image
-              height={2208} // Set the actual height of the image
-              className='absolute inset-[0px] h-full w-full object-cover object-center !min-w-screen !w-screen block h-full max-w-full'
-            /> 
-          </SwiperSlide>
-        ))
-        :
-        desktopImages.map((image, index) => (
-          <SwiperSlide key={index} className="!min-w-screen !relative !h-[0px] !w-screen pt-[var(--vh)]"> 
-            <Image
-              src={image}
-              alt={`Slide ${index}`}
-              width={1920}  // Set the actual width of the image
-              height={1080} // Set the actual height of the image
-              className='absolute inset-[0px] h-full w-full object-cover object-center !min-w-screen !w-screen block h-full max-w-full'
-            /> 
-          </SwiperSlide>
+    <>
+      <div className="relative z-[4]"> 
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={1}
+          allowTouchMove={false}
+          onSlideChange={() => console.log('slide change')}
+          onSwiper={(swiper) => console.log(swiper)}
+          loop={true}
+          effect={'fade'}
+          modules={[EffectFade]}
           
-      ))}
-      
-      <SwiperNavButton />
-    </Swiper>
+          >
+          {isMobile
+            ? 
+            mobileImages.map((image, index) => (
+              <SwiperSlide key={index} className="!min-w-screen !relative !h-[0px] !w-screen pt-[var(--vh)]"> 
+                <Image
+                  src={image}
+                  alt={`Slide ${index}`}
+                  width={1242}  // Set the actual width of the image
+                  height={2208} // Set the actual height of the image
+                  className='absolute inset-[0px] h-full w-full object-cover object-center !min-w-screen !w-screen block h-full max-w-full'
+                  /> 
+              </SwiperSlide>
+            ))
+            :
+            desktopImages.map((image, index) => (
+              <SwiperSlide key={index} className="!min-w-screen !relative !h-[0px] !w-screen pt-[var(--vh)]"> 
+                <Image
+                  src={image}
+                  alt={`Slide ${index}`}
+                  width={1920}  // Set the actual width of the image
+                  height={1080} // Set the actual height of the image
+                  className='absolute inset-[0px] h-full w-full object-cover object-center !min-w-screen !w-screen block h-full max-w-full'
+                  /> 
+              </SwiperSlide>
+              
+              ))}
+          
+          <SwiperNavButton />
+        </Swiper>
+      </div>
+    </>
   );
 };
