@@ -39,10 +39,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 TODO:
 fix swiper loop
-logo effects
-fades
-styling
-fonts
-colors
-font-sizes
 mobile menu
+change white to #eae4da 
