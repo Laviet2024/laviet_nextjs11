@@ -9,12 +9,12 @@ const FadingComponent = ({ image }) => {
     // Hide the component after 1 second
     const timerOpacity = setTimeout(() => {
       setIsVisible(false);
-    }, 1000);
+    }, 1500);
 
     // Show the component after opacity transition completes (1 second delay)
     const timerZIndex = setTimeout(() => {
       setIsZIndexVisible(false);
-    }, 2000);
+    }, 2500);
 
     // Cleanup timers to avoid memory leaks
     return () => {
@@ -24,7 +24,7 @@ const FadingComponent = ({ image }) => {
   }, []);
 
   return (
-    <div className={`flex justify-center items-center w-full h-full fixed top-0 left-0 ${isZIndexVisible ? 'z-50' : 'z-2'} transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+    <div className={`flex justify-center items-center w-full h-full fixed top-0 left-0 ${isZIndexVisible ? 'z-50' : 'z-2'} transition-opacity duration-[1.5s] ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
       <Image
         src={image}
         alt="Fading Image"
