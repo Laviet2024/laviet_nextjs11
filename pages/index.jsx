@@ -70,12 +70,12 @@ export default function Home() {
   }, [isContactOpen]);
 
   return (
-    <div className="flex flex-col bg-green text-white">
+    <div className="flex flex-col bg-green">
       <Head>
         <title>Your Title</title>
         {/* Add your meta tags, links, and other head elements here */}
       </Head>
-      <div className="flex h-[var(--vh)] flex-col bg-green text-white">
+      <div className="flex h-[var(--vh)] flex-col bg-green">
         <Navigation 
           isAboutOpen={isAboutOpen} 
           setIsAboutOpen={toggleAbout} 
