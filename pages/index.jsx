@@ -72,7 +72,7 @@ export default function Home() {
   return (
     <div className="flex flex-col bg-green">
       <Head>
-        <title>Your Title</title>
+        <title>LÀ VIET</title>
         {/* Add your meta tags, links, and other head elements here */}
       </Head>
       <div className="flex h-[var(--vh)] flex-col bg-green">
