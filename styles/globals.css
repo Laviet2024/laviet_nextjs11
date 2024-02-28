@@ -16,7 +16,14 @@ body {
   font-family: Cirka Light, sans-serif;
   color: #eae4da;
   word-spacing: 0.1rem;
+  letter-spacing: 0.15rem;
 
+}
+
+button {
+  color: #eae4da;
+  word-spacing: 0.1rem;
+  letter-spacing: 0.15rem;
 }
 
 a {
