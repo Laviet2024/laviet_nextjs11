@@ -10,11 +10,12 @@ import { ContactComponent } from '../components/ContactComponent';
 import { Footer } from '../components/Footer';
 import FadingComponent from '../components/FadingComponent';
 import splashLogo from '../public/upload/splash-logo.png'
+import siteConfig from '../config.json'
 
 export default function Home() {
   // destructure.
   const { about, address, desktopImages, mobileImages, hours, contact, menu_philosophy, menu, order_online_link, book_online_link } = pageContent;
-
+  const {base_url, site_title, site_description, site_keywords, instagram, linkedin} = siteConfig;
   // State to hold the viewport height
   const [viewportHeight, setViewportHeight] = useState(0);
 
@@ -72,8 +73,20 @@ export default function Home() {
   return (
     <div className="flex flex-col bg-green">
       <Head>
-        <title>LÀ VIET</title>
-        {/* Add your meta tags, links, and other head elements here */}
+        <title>{site_title}</title>
+        <meta name="description" content={site_description} />
+        <meta name="keywords" content={site_keywords} />
+        <meta property="og:url" content={base_url} />
+        <meta property="og:title" content={site_title} />
+        <meta property="og:description" content={site_description} />
+        <meta property="og:site_name" content={site_title} />
+        <link rel="canonical" href={base_url} />
+        {/* NOT IN USE */}
+        {/* <meta property="og:image" content={`${base_url}/default-image.jpg`} /> */}
+        {/* <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={site_title} />
+        <meta name="twitter:description" content={site_description} />
+        <meta name="twitter:image" content={`${base_url}/default-image.jpg`} /> */}
       </Head>
       <div className="flex h-[var(--vh)] flex-col bg-green">
         <Navigation 
