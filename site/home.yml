@@ -1,9 +1,12 @@
 desktopImages:
-  - /upload/testImage.png
-  - /upload/testImage2.png
+  - /upload/LaViet_image01.jpg
+  - /upload/LaViet_image02.jpg
+  - /upload/LaViet_image03.jpg
+  - /upload/LaViet_image04.jpg
 mobileImages:
-  - /upload/mob1.png
-  - /upload/mob2.png
+  - /upload/LaViet_imagemob_01.jpg
+  - /upload/LaViet_imagemob_02.jpg
+  - /upload/LaViet_imagemob_03.jpg
 about: >-
   Là Viet is a calm backdrop to the vibrant flavours and ingredients of
   Vietnamese cuisine, with authentic Vietnamese hospitality presented in a
