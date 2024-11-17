@@ -52,7 +52,7 @@ export default function Home() {
     if (isContactOpen) setIsContactOpen(false);
   };
 
-  const toggleMenu = () => {
+  const toggleMenu = () => { 
     setIsMenuOpen(!isMenuOpen);
     if (isAboutOpen) setIsAboutOpen(false);
     if (isContactOpen) setIsContactOpen(false);
@@ -97,6 +97,7 @@ export default function Home() {
           isContactOpen={isContactOpen} 
           setIsContactOpen={toggleContact} 
         />
+        <button onClick={toggleMenu}>Toggle Menu</button>
         <HomepageSwiper desktopImages={desktopImages} mobileImages={mobileImages}/>
         <FadingComponent image={splashLogo} />
         <AboutComponent isAboutOpen={isAboutOpen}/>
