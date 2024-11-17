@@ -53,7 +53,6 @@ export default function Home() {
   };
 
   const toggleMenu = () => { 
-    console.log('Toggling menu:', !isMenuOpen);
     setIsMenuOpen(!isMenuOpen);
     if (isAboutOpen) setIsAboutOpen(false);
     if (isContactOpen) setIsContactOpen(false);
