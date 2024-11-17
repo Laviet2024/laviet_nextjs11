@@ -97,7 +97,6 @@ export default function Home() {
           isContactOpen={isContactOpen} 
           setIsContactOpen={toggleContact} 
         />
-        <button onClick={toggleMenu}>Toggle Menu</button>
         <HomepageSwiper desktopImages={desktopImages} mobileImages={mobileImages}/>
         <FadingComponent image={splashLogo} />
         <AboutComponent isAboutOpen={isAboutOpen}/>
