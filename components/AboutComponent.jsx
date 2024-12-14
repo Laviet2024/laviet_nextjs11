@@ -2,7 +2,7 @@ import MarkdownComponent from "./MarkdownComponent";
 import pageContent from "../site/home.yml";
 
 export const AboutComponent = ({ isAboutOpen }) => {
-  const { about } = pageContent;
+  const { about, order_online_link } = pageContent;
 
   return (
     <div>
@@ -11,6 +11,7 @@ export const AboutComponent = ({ isAboutOpen }) => {
           <div className="flex items-center justify-center h-full">
             <div className="text-center child-p-mb10 max-w-[85%] lg:max-w-[70%]">
               <MarkdownComponent content={about}/>
+              <MarkdownComponent content={order_online_link}/>
             </div>
           </div>
         </div>
