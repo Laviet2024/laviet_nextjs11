@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import lvLogo from '../public/upload/lv_logo.png';
+import pageContent from '../site/home.yml';
 
 export const Navigation = ({ isAboutOpen, setIsAboutOpen, isMenuOpen, setIsMenuOpen, isContactOpen, setIsContactOpen }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -49,7 +50,7 @@ export const Navigation = ({ isAboutOpen, setIsAboutOpen, isMenuOpen, setIsMenuO
           /> 
         </div>
         <div className="col-span-12 lg:col-span-2 lg:flex lg:justify-end">
-          <a href="#" rel="noreferrer noopener" target="_blank" className="opacity-100 ease mb-[10px] block w-fit transition-all duration-[0.4s] lg:mb-[0px] lg:mr-[60px] betterhover:hover:opacity-50">Order Online</a>
+          <a href={pageContent.order_online_link} rel="noreferrer noopener" target="_blank" className="opacity-100 ease mb-[10px] block w-fit transition-all duration-[0.4s] lg:mb-[0px] lg:mr-[60px] betterhover:hover:opacity-50">Order Online</a>
         </div>
         <div className="col-span-12 lg:col-span-2 lg:flex lg:justify-end">
           <a href="#" rel="noreferrer noopener" target="_blank" className="opacity-100 ease block w-fit transition-all duration-[0.4s] betterhover:hover:opacity-50">Book Online</a>
